@@ -9,14 +9,14 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PensionWinningNum {
+public class PensionWinNum {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "WINNING_NUM_ID")
     private Long id;
 
-    @Column(name = "DRAW_ROUND")
-    private int draw_round;
+    @Column(name="DRAW_ROUND")
+    private int drawRound;
 
     @Column(name = "FIRST_NUM")
     private int firstNum;
@@ -48,4 +48,8 @@ public class PensionWinningNum {
 
     @Column(name = "DRAW_DATE")
     private LocalDate drawDate;
+
+    @OneToOne(mappedBy = "pensionWinNum", cascade = CascadeType.ALL)
+    private PensionBonusNum pensionBonusNum;
+
 }
