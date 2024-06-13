@@ -10,19 +10,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pension-bonus")
+@RequestMapping("/api/v1/pension/bonus")
 @RequiredArgsConstructor
 public class PensionBonusController {
     private final BonusSrv bonusSrv;
 
-    @GetMapping("/date/{date}")
+    @GetMapping("/{date}")
     public ResponseEntity<PensionBonusNum> getBonusByDate(@PathVariable String date) {
         LocalDate bonusDate = LocalDate.parse(date);
         PensionBonusNum bonus = bonusSrv.getBonusByDate(bonusDate);
         return ResponseEntity.ok(bonus);
     }
 
-    @GetMapping("/round/{round}")
+    @GetMapping("/{round}")
     public ResponseEntity<PensionBonusNum> getBonusByRound(@PathVariable int round) {
         PensionBonusNum bonus = bonusSrv.getBonusByRound(round);
         return ResponseEntity.ok(bonus);

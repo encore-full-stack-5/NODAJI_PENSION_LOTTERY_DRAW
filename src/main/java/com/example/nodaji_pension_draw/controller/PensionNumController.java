@@ -10,20 +10,20 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pension-draws")
+@RequestMapping("/api/v1/pension/draw")
 @RequiredArgsConstructor
 public class PensionNumController {
 
     private final PensionWinNumSrv pensionWinNumSrv;
 
-    @GetMapping("/date/{date}")
+    @GetMapping("/{date}")
     public ResponseEntity<PensionWinNum> getDrawByDate(@PathVariable String date) {
         LocalDate drawDate = LocalDate.parse(date);
         PensionWinNum draw = pensionWinNumSrv.getDrawByDate(drawDate);
         return ResponseEntity.ok(draw);
     }
 
-    @GetMapping("/round/{round}")
+    @GetMapping("/{round}")
     public ResponseEntity<PensionWinNum> getDrawByRound(@PathVariable int round) {
         PensionWinNum draw = pensionWinNumSrv.getDrawByRound(round);
         return ResponseEntity.ok(draw);
