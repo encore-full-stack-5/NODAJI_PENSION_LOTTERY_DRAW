@@ -3,8 +3,8 @@ import com.example.nodaji_pension_draw.entity.PensionWinNum;
 import com.example.nodaji_pension_draw.repository.PensionWinNumRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Service
@@ -22,5 +22,11 @@ public class PensionWinNumSrvImpl implements PensionWinNumSrv {
     @Override
     public PensionWinNum getDrawByRound(int round) {
         return pensionWinNumRepo.findByDrawRound(round);
+    }
+
+    @Override
+    public List<PensionWinNum> getAllDraws() {
+        pensionWinNumRepo.findAll().forEach(System.out::println);
+        return List.of();
     }
 }

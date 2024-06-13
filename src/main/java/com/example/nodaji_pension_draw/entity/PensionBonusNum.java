@@ -19,7 +19,7 @@ public class PensionBonusNum {
 
 
     @Column(name = "DRAW_ROUND")
-    private int draw_round;
+    private int drawRound;
 
 
     @Column(name = "FIRST_NUM")
