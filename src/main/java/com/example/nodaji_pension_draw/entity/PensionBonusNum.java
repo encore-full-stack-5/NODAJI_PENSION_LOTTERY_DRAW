@@ -41,7 +41,7 @@ public class PensionBonusNum {
     @Column(name = "FIFTH_NUM")
     private int fifthNum;
 
-
+    @Setter
     @Column(name = "SIXTH_NUM")
     private int sixthNum;
 

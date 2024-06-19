@@ -29,14 +29,31 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
     public void generateScheduledDraw() {
         date = LocalDate.now();
         PensionWinNum draw =  createDraw();
+        PensionBonusNum init = createBonusDraw();
+        PensionBonusNum  bonusNum;
+
+
+        if ( draw.getSixthNum() == init.getSixthNum() ) {
+            bonusNum = redrawLastDigit(init);
+        }else{
+            bonusNum = init;
+        }
+
         pensionWinNumRepo.save(draw);
-        PensionBonusNum  bonusNum = createBonusDraw();
         pensionBonusNumRepo.save(bonusNum);
 
 //        PensionWinAndBonus pensionWinAndBonus = new PensionWinAndBonus(draw, bonusNum);
 //        apiMatching.sendWinAndBonusResult(pensionWinAndBonus);
 
         drawRound++;
+    }
+
+
+    public PensionBonusNum redrawLastDigit(PensionBonusNum bonusNum) {
+        Random random = new Random();
+        int newSixthNum = random.nextInt(10);
+        bonusNum.setSixthNum(newSixthNum);
+        return bonusNum;
     }
 
     @Override
