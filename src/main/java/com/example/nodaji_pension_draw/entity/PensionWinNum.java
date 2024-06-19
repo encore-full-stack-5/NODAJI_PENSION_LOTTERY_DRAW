@@ -49,7 +49,8 @@ public class PensionWinNum {
     @Column(name = "DRAW_DATE")
     private LocalDate drawDate;
 
-    @OneToOne(mappedBy = "pensionWinNum", cascade = CascadeType.ALL)
-    private PensionBonusNum pensionBonusNum;
+
+//    @OneToOne(mappedBy = "pensionWinNum", cascade = CascadeType.ALL)
+//    private PensionBonusNum pensionBonusNum;
 
 }

@@ -26,7 +26,7 @@ public class PensionWinNumSrvImpl implements PensionWinNumSrv {
 
     @Override
     public List<PensionWinNum> getAllDraws() {
-        pensionWinNumRepo.findAll().forEach(System.out::println);
-        return List.of();
+        return pensionWinNumRepo.findAll();
+
     }
 }

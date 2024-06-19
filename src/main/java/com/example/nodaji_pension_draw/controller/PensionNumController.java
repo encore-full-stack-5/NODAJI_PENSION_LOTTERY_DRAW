@@ -3,6 +3,7 @@ package com.example.nodaji_pension_draw.controller;
 import com.example.nodaji_pension_draw.entity.PensionWinNum;
 import com.example.nodaji_pension_draw.service.PensionWinNumSrv;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,9 +30,9 @@ public class PensionNumController {
         return ResponseEntity.ok(draw);
     }
 
-    @GetMapping
+    @GetMapping("/draws")
     public ResponseEntity<List<PensionWinNum>> getAllDraws() {
         List<PensionWinNum> draws = pensionWinNumSrv.getAllDraws();
-        return ResponseEntity.ok(draws);
+        return new ResponseEntity<>(draws, HttpStatus.OK);
     }
 }

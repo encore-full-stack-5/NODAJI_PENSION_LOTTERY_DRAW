@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Repository
 public interface PensionBonusNumRepo extends JpaRepository<PensionBonusNum, Long> {
-    PensionBonusNum getBonusByDate(LocalDate date);
-    PensionBonusNum getBonusByRound(int round);
+    PensionBonusNum findBonusByDrawDate(LocalDate date);
+    PensionBonusNum findBonusByDrawRound(int round);
 
 }
