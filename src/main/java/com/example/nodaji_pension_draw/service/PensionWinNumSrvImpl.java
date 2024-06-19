@@ -14,13 +14,12 @@ public class PensionWinNumSrvImpl implements PensionWinNumSrv {
 
 
     @Override
-    public PensionWinNum getDrawByDate(LocalDate date) {
-      return  pensionWinNumRepo.findByDrawDate(date);
-
+    public List<PensionWinNum> getDrawByDate(LocalDate date) {
+        return pensionWinNumRepo.findByDrawDate(date);
     }
 
     @Override
-    public PensionWinNum getDrawByRound(int round) {
+    public List<PensionWinNum> getDrawByRound(int round) {
         return pensionWinNumRepo.findByDrawRound(round);
     }
 

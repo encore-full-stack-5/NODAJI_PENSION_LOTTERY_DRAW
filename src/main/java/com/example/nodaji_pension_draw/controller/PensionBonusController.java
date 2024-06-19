@@ -1,9 +1,7 @@
 package com.example.nodaji_pension_draw.controller;
-
 import com.example.nodaji_pension_draw.entity.PensionBonusNum;
 import com.example.nodaji_pension_draw.service.BonusSrv;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -15,22 +13,22 @@ import java.util.List;
 public class PensionBonusController {
     private final BonusSrv bonusSrv;
 
-    @GetMapping("/{date}")
-    public ResponseEntity<PensionBonusNum> getBonusByDate(@PathVariable String date) {
+    @GetMapping("/date")
+    public List<PensionBonusNum> getBonusByDate(@RequestParam String date) {
         LocalDate bonusDate = LocalDate.parse(date);
-        PensionBonusNum bonus = bonusSrv.getBonusByDate(bonusDate);
-        return ResponseEntity.ok(bonus);
+       return bonusSrv.getBonusByDate(bonusDate);
+
     }
 
-    @GetMapping("/{round}")
-    public ResponseEntity<PensionBonusNum> getBonusByRound(@PathVariable int round) {
-        PensionBonusNum bonus = bonusSrv.getBonusByRound(round);
-        return ResponseEntity.ok(bonus);
+    @GetMapping("/round")
+    public List<PensionBonusNum> getBonusByRound(@RequestParam int round) {
+        return  bonusSrv.getBonusByRound(round);
+
     }
 
-    @GetMapping
-    public ResponseEntity<List<PensionBonusNum>> getAllBonusNum() {
-        List<PensionBonusNum> bonuses = bonusSrv.getAllBonusNum();
-        return ResponseEntity.ok(bonuses);
+    @GetMapping("/bonus-win-lists")
+    public List<PensionBonusNum> getAllBonusNum() {
+        return  bonusSrv.getAllBonusNum();
+
     }
 }

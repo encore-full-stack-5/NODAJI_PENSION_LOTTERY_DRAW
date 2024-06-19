@@ -11,8 +11,8 @@ import java.util.Map;
 
 @Repository
 public interface PensionBonusNumRepo extends JpaRepository<PensionBonusNum, Long> {
-    PensionBonusNum findBonusByDrawDate(LocalDate date);
-    PensionBonusNum findBonusByDrawRound(int round);
+    List<PensionBonusNum> findBonusByDrawDate(LocalDate date);
+    List<PensionBonusNum> findBonusByDrawRound(int round);
 
     @Query("SELECT p.firstNum AS number, COUNT(p.firstNum) AS frequency FROM PensionBonusNum p GROUP BY p.firstNum ORDER BY frequency DESC")
     List<Map<String, Object>> countFrequencyOfFirstNum();

@@ -14,13 +14,13 @@ public class BonusSrvImpl implements BonusSrv {
     private final PensionBonusNumRepo pensionBonusNumRepo;
 
     @Override
-    public PensionBonusNum getBonusByDate(LocalDate date) {
+    public List<PensionBonusNum> getBonusByDate(LocalDate date) {
 
         return  pensionBonusNumRepo.findBonusByDrawDate(date);
     }
 
     @Override
-    public PensionBonusNum getBonusByRound(int round) {
+    public List<PensionBonusNum> getBonusByRound(int round) {
 
         return pensionBonusNumRepo.findBonusByDrawRound(round);
     }

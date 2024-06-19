@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface BonusSrv {
-    PensionBonusNum getBonusByDate(LocalDate date);
-    PensionBonusNum getBonusByRound(int round);
+    List<PensionBonusNum> getBonusByDate(LocalDate date);
+    List<PensionBonusNum> getBonusByRound(int round);
     List<PensionBonusNum> getAllBonusNum();
 }

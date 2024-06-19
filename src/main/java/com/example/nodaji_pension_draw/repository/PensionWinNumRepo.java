@@ -11,8 +11,8 @@ import java.util.Map;
 
 @Repository
 public interface PensionWinNumRepo extends JpaRepository<PensionWinNum, Long> {
-    PensionWinNum findByDrawDate(LocalDate drawDate);
-    PensionWinNum findByDrawRound(int drawRound);
+    List<PensionWinNum> findByDrawDate(LocalDate drawDate);
+    List<PensionWinNum> findByDrawRound(int drawRound);
 
 
     @Query("SELECT p.firstNum AS number, COUNT(p.firstNum) AS frequency " +

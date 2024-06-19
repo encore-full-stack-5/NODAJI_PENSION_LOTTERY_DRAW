@@ -6,8 +6,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface PensionWinNumSrv {
-    PensionWinNum getDrawByDate(LocalDate date);
-    PensionWinNum  getDrawByRound(int round);
+    List<PensionWinNum> getDrawByDate(LocalDate date);
+    List<PensionWinNum>  getDrawByRound(int round);
     List<PensionWinNum> getAllDraws();
 
 
