@@ -7,6 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@CrossOrigin(origins = "*"
+        ,methods = {
+        RequestMethod.GET,
+        RequestMethod.POST,
+        RequestMethod.DELETE,
+        RequestMethod.PUT,
+        RequestMethod.OPTIONS}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/pension/bonus")
 @RequiredArgsConstructor

@@ -25,7 +25,7 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
 
     @Override
 //    @Scheduled(cron = "0 0 10 ? * THU")
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = "*/20 * * * * *")
     public void generateScheduledDraw() {
         date = LocalDate.now();
         PensionWinNum draw =  createDraw();
@@ -91,7 +91,7 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
                 random.nextInt(10),
                 random.nextInt(10),
                 random.nextInt(10),
-                random.nextInt(4) + 1  // Group number from 1 to 4
+                random.nextInt(4) + 1
         );
 
         return pwDto.toDto();

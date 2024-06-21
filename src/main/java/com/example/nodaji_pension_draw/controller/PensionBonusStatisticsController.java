@@ -1,13 +1,18 @@
 package com.example.nodaji_pension_draw.controller;
 import com.example.nodaji_pension_draw.service.StatBonusService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "*"
+        ,methods = {
+        RequestMethod.GET,
+        RequestMethod.POST,
+        RequestMethod.DELETE,
+        RequestMethod.PUT,
+        RequestMethod.OPTIONS}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/statistics/bonus")
 @RequiredArgsConstructor

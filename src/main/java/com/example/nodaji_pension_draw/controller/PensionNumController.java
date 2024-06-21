@@ -4,12 +4,18 @@ import com.example.nodaji_pension_draw.service.PensionWinNumSrv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
+@CrossOrigin(origins = "*"
+        ,methods = {
+        RequestMethod.GET,
+        RequestMethod.POST,
+        RequestMethod.DELETE,
+        RequestMethod.PUT,
+        RequestMethod.OPTIONS}, allowedHeaders = "*")
 @RestController
-@RequestMapping("/api/v1/pension-win/")
+@RequestMapping("/api/v1/pension-win")
 @RequiredArgsConstructor
 public class PensionNumController {
 
@@ -22,8 +28,8 @@ public class PensionNumController {
         return pensionWinNumSrv.getDrawByDate(date);
     }
 
-    @GetMapping("/round")
-    public List<PensionWinNum> getDrawByRound(@RequestParam int round) {
+    @GetMapping
+    public List<PensionWinNum> getDrawByRound(@RequestParam(value = "round") int round) {
         return pensionWinNumSrv.getDrawByRound(round);
 
     }
