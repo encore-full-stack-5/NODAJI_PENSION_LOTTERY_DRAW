@@ -15,25 +15,25 @@ import java.util.List;
         RequestMethod.PUT,
         RequestMethod.OPTIONS}, allowedHeaders = "*")
 @RestController
-@RequestMapping("/api/v1/pension/bonus")
+@RequestMapping("/api/v1/pension-bonus")
 @RequiredArgsConstructor
 public class PensionBonusController {
     private final BonusSrv bonusSrv;
 
-    @GetMapping("/date")
-    public List<PensionBonusNum> getBonusByDate(@RequestParam String date) {
-        LocalDate bonusDate = LocalDate.parse(date);
-       return bonusSrv.getBonusByDate(bonusDate);
+//    @GetMapping
+//    public List<PensionBonusNum> getBonusByDate(@RequestParam(value="date") String date) {
+//        LocalDate bonusDate = LocalDate.parse(date);
+//       return bonusSrv.getBonusByDate(bonusDate);
+//
+//    }
 
-    }
-
-    @GetMapping("/round")
-    public List<PensionBonusNum> getBonusByRound(@RequestParam int round) {
+    @GetMapping
+    public List<PensionBonusNum> getBonusByRound(@RequestParam(value ="round" ) int round) {
         return  bonusSrv.getBonusByRound(round);
 
     }
 
-    @GetMapping("/bonus-win-lists")
+    @GetMapping("/all")
     public List<PensionBonusNum> getAllBonusNum() {
         return  bonusSrv.getAllBonusNum();
 
