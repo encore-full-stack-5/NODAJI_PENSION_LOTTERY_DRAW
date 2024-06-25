@@ -50,7 +50,4 @@ public class PensionWinNum {
     private LocalDate drawDate;
 
 
-//    @OneToOne(mappedBy = "pensionWinNum", cascade = CascadeType.ALL)
-//    private PensionBonusNum pensionBonusNum;
-
 }

@@ -20,12 +20,12 @@ import java.util.List;
 public class PensionBonusController {
     private final BonusSrv bonusSrv;
 
-//    @GetMapping
-//    public List<PensionBonusNum> getBonusByDate(@RequestParam(value="date") String date) {
-//        LocalDate bonusDate = LocalDate.parse(date);
-//       return bonusSrv.getBonusByDate(bonusDate);
-//
-//    }
+    @GetMapping("date")
+    public List<PensionBonusNum> getBonusByDate(@RequestParam(value="date") String date) {
+        LocalDate bonusDate = LocalDate.parse(date);
+       return bonusSrv.getBonusByDate(bonusDate);
+
+    }
 
     @GetMapping
     public List<PensionBonusNum> getBonusByRound(@RequestParam(value ="round" ) int round) {

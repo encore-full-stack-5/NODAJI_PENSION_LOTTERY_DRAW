@@ -23,8 +23,7 @@ public class PensionNumController {
 
     @GetMapping("/date")
     public List<PensionWinNum> getDrawByDate(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-//        PensionWinNum draw = pensionWinNumSrv.getDrawByDate(date);
-//        return ResponseEntity.ok(draw);
+
         return pensionWinNumSrv.getDrawByDate(date);
     }
 

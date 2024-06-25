@@ -49,9 +49,5 @@ public class PensionBonusNum {
     @Column(name = "DRAW_DATE")
     private LocalDate drawDate;
 
-//    @OneToOne
-//    @JoinColumn(name = "BONUS_NUM_ID")
-//    private PensionWinNum pensionWinNum;
-
 
 }
