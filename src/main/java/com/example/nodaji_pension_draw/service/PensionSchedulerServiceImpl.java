@@ -1,6 +1,8 @@
 package com.example.nodaji_pension_draw.service;
 //import com.example.nodaji_pension_draw.api.ApiMatching;
+import com.example.nodaji_pension_draw.api.ApiMatching;
 import com.example.nodaji_pension_draw.dto.PensionWinNumDto;
+import com.example.nodaji_pension_draw.dto.request.PensionWinAndBonus;
 import com.example.nodaji_pension_draw.entity.PensionBonusNum;
 import com.example.nodaji_pension_draw.entity.PensionWinNum;
 import com.example.nodaji_pension_draw.repository.PensionBonusNumRepo;
@@ -18,7 +20,7 @@ import java.util.Random;
 public class PensionSchedulerServiceImpl implements PensionSchedulerService {
     private final PensionWinNumRepo pensionWinNumRepo;
     private final PensionBonusNumRepo pensionBonusNumRepo;
-//    private final ApiMatching apiMatching;
+    private final ApiMatching apiMatching;
 
     @Getter
     public int drawRound = 1;
@@ -52,12 +54,6 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
     }
 
 
-//    public PensionBonusNum redrawLastDigit(PensionBonusNum bonusNum) {
-//        Random random = new Random();
-//        int newSixthNum = random.nextInt(10);
-//        bonusNum.setSixthNum(newSixthNum);
-//        return bonusNum;
-//    }
 @Override
 public PensionBonusNum redrawLastDigit(PensionBonusNum bonusNum) {
     Random random = new Random();

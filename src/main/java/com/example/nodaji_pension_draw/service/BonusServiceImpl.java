@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class BonusSrvImpl implements BonusSrv {
+public class BonusServiceImpl implements BonusService {
     private final PensionBonusNumRepo pensionBonusNumRepo;
 
     @Override

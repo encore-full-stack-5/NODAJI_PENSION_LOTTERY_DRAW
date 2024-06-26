@@ -16,12 +16,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
-class BonusSrvImplTest {
+class BonusServiceImplTest {
     @Mock
     private PensionBonusNumRepo pensionBonusNumRepo;
 
     @InjectMocks
-    private BonusSrvImpl bonusSrv;
+    private BonusServiceImpl bonusSrv;
 
     private List<PensionBonusNum> sampleBonuses;
 

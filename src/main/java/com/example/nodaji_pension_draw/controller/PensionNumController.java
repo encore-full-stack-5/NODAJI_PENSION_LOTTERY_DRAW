@@ -1,6 +1,6 @@
 package com.example.nodaji_pension_draw.controller;
 import com.example.nodaji_pension_draw.entity.PensionWinNum;
-import com.example.nodaji_pension_draw.service.PensionWinNumSrv;
+import com.example.nodaji_pension_draw.service.PensionWinNumSvc;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -19,23 +19,23 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PensionNumController {
 
-    private final PensionWinNumSrv pensionWinNumSrv;
+    private final PensionWinNumSvc pensionWinNumSvc;
 
     @GetMapping("/date")
     public List<PensionWinNum> getDrawByDate(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 
-        return pensionWinNumSrv.getDrawByDate(date);
+        return pensionWinNumSvc.getDrawByDate(date);
     }
 
-    @GetMapping
+    @GetMapping("/round")
     public List<PensionWinNum> getDrawByRound(@RequestParam(value = "round") int round) {
-        return pensionWinNumSrv.getDrawByRound(round);
+        return pensionWinNumSvc.getDrawByRound(round);
 
     }
 
     @GetMapping("/all")
     public List<PensionWinNum> getAllDraws() {
-        return pensionWinNumSrv.getAllDraws();
+        return pensionWinNumSvc.getAllDraws();
 
     }
 }

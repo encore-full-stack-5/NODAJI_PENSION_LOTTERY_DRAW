@@ -28,11 +28,7 @@ class PensionSchedulerServiceImplTest {
     @InjectMocks
     private PensionSchedulerServiceImpl pensionSchedulerService;
 
-    @Captor
-    private ArgumentCaptor<PensionWinNum> drawCaptor;
 
-    @Captor
-    private ArgumentCaptor<PensionBonusNum> bonusNumCaptor;
 
     private LocalDate testDate = LocalDate.now().with(DayOfWeek.THURSDAY);
 
@@ -81,43 +77,5 @@ class PensionSchedulerServiceImplTest {
         assertEquals(pensionSchedulerService.drawRound, winNum.getDrawRound());
     }
 
-//    private PensionWinNum createMockPensionWinNum() {
-//        return PensionWinNum.builder()
-//                .drawRound(1)
-//                .firstNum(1)
-//                .secondNum(2)
-//                .thirdNum(3)
-//                .fourthNum(4)
-//                .fifthNum(5)
-//                .sixthNum(6)
-//                .groupNum(1)
-//                .drawDate(LocalDate.now())
-//                .build();
-//    }
 
-//    private PensionBonusNum createMockPensionBonusNum() {
-//        return PensionBonusNum.builder()
-//                .drawRound(1)
-//                .firstNum(1)
-//                .secondNum(2)
-//                .thirdNum(3)
-//                .fourthNum(4)
-//                .fifthNum(5)
-//                .sixthNum(6)
-//                .drawDate(LocalDate.now())
-//                .build();
-//    }
-//
-//    private PensionBonusNum createMockRedrawnPensionBonusNum() {
-//        return PensionBonusNum.builder()
-//                .drawRound(1)
-//                .firstNum(1)
-//                .secondNum(2)
-//                .thirdNum(3)
-//                .fourthNum(4)
-//                .fifthNum(5)
-//                .sixthNum(7) // Different sixth number to simulate redraw
-//                .drawDate(LocalDate.now())
-//                .build();
-//    }
 }

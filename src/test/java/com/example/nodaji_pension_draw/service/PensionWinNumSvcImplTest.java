@@ -2,7 +2,6 @@ package com.example.nodaji_pension_draw.service;
 
 import com.example.nodaji_pension_draw.entity.PensionWinNum;
 import com.example.nodaji_pension_draw.repository.PensionWinNumRepo;
-import org.bouncycastle.crypto.agreement.jpake.JPAKEUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +10,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,11 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class PensionWinNumSrvImplTest {
+class PensionWinNumSvcImplTest {
     @Mock
     private PensionWinNumRepo pensionWinNumRepo;
     @InjectMocks
-    private PensionWinNumSrvImpl pensionWinNumSrv;
+    private PensionWinNumSvcImpl pensionWinNumSrv;
 
     private List<PensionWinNum> sampleDraws;
 

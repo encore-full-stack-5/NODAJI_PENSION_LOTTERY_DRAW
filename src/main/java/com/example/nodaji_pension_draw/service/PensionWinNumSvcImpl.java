@@ -9,7 +9,7 @@
 
     @Service
     @RequiredArgsConstructor
-    public class PensionWinNumSrvImpl implements PensionWinNumSrv {
+    public class PensionWinNumSvcImpl implements PensionWinNumSvc {
         private final PensionWinNumRepo pensionWinNumRepo;
 
 
