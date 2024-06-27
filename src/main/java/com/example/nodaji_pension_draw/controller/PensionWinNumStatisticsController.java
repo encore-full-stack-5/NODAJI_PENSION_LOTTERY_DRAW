@@ -53,5 +53,8 @@ public class PensionWinNumStatisticsController {
     @GetMapping("/groupNum")
     public List<Map<String, Object>> getFrequencyOfGroupNum() {
         return statService.getFrequencyOfGroupNum();
+
     }
+
+
 }
