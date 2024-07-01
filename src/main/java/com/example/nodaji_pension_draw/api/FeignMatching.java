@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "feignMatching", url = "localhost:8082")
+@FeignClient(name = "feignMatching", url = "34.44.4.146:31000")
 public interface FeignMatching {
 
     @PostMapping("/api/v1/pension/matching")
