@@ -1,5 +1,5 @@
 package com.example.nodaji_pension_draw.service;
-//import com.example.nodaji_pension_draw.api.ApiMatching;
+import com.example.nodaji_pension_draw.api.ApiMatching;
 import com.example.nodaji_pension_draw.api.ApiMatching;
 import com.example.nodaji_pension_draw.dto.PensionWinNumDto;
 import com.example.nodaji_pension_draw.dto.request.PensionWinAndBonus;
@@ -30,7 +30,6 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
     @Override
 //    @Scheduled(cron = "0 0 10 ? * THU")
     @Scheduled(cron = "0 */20 * * * *")
-    //@Scheduled(cron = "0 0 10 ? * THU")
     public void generateScheduledDraw() {
         date = LocalDate.now();
         PensionWinNum draw =  createDraw();
@@ -47,8 +46,8 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
         pensionWinNumRepo.save(draw);
         pensionBonusNumRepo.save(bonusNum);
 
-//        PensionWinAndBonus pensionWinAndBonus = new PensionWinAndBonus(draw, bonusNum);
-//        apiMatching.sendWinAndBonusResult(pensionWinAndBonus);
+        PensionWinAndBonus pensionWinAndBonus = new PensionWinAndBonus(draw, bonusNum);
+        apiMatching.sendWinAndBonusResult(pensionWinAndBonus);
 
         drawRound++;
     }
