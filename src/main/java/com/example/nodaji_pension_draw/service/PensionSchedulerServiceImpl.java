@@ -29,7 +29,7 @@ public class PensionSchedulerServiceImpl implements PensionSchedulerService {
 
     @Override
 //    @Scheduled(cron = "0 0 10 ? * THU")
-    @Scheduled(cron = "0 */30 * * * *")
+    @Scheduled(cron = "0 */10 * * * *")
     //@Scheduled(cron = "0 0 10 ? * THU")
     public void generateScheduledDraw() {
         date = LocalDate.now();
